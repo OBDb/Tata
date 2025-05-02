@@ -55,9 +55,9 @@
   "signals": [
     {"id": "TATA_ODOMETER", "path": "Movement", "fmt": { "len": 24, "max": 1000000, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "7E4", "dbg": true, "cmd": {"22": "DD09"}, "freq": 5,
+{ "hdr": "7E4", "dbg": true, "cmd": {"22": "DD09"}, "freq": 0.1,
   "signals": [
-    {"id": "TATA_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "TATA_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle Speed", "suggestedMetric": "speed"}
   ]}
 ]
 }
