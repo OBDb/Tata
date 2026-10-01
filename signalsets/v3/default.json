@@ -113,6 +113,30 @@
   "signals": [
     {"id": "TATA_GPS_SATS", "path": "GPS", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "scalar" }, "name": "Satellites in view"}
   ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "03F3"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_SUMP_OIL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Sump oil temperature", "suggestedMetric": "engineOilTemperature"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "0417"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_REMAINING_VOLUME", "path": "Engine", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "liters" }, "name": "Diesel particulate filter remaining volume"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "0598"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_CALC_MAX_SOOT", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "percent" }, "name": "Diesel particulate filter calculated max soot concentration"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "05FC"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_SCR_FLUID_MASS", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "unknown" }, "name": "Exhaust fluid mass"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "061F"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_SOOT_MASS", "path": "Engine", "fmt": { "len": 16, "max": 100, "mul": 20, "div": 13107, "unit": "unknown" }, "name": "Diesel particulate filter soot mass"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "0635"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_SOOT", "path": "Engine", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "unknown" }, "name": "Diesel particulate filter soot"}
+  ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "40F7"}, "freq": 1,
   "signals": [
     {"id": "TATA_HANDBRAKE", "path": "Control", "fmt": { "len": 8, "max": 1, "unit": "scalar" }, "name": "Handbrake"}
@@ -132,6 +156,22 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "16C1"}, "freq": 1,
   "signals": [
     {"id": "TATA_FLI", "path": "Fuel", "fmt": { "len": 16, "max": 100, "mul": 200, "div": 65535, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "1E12"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_GEAR_CMD", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear, commanded"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "1E1F"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_GEAR_ENGAGED", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear engaged"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "1E69"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_ATF_T", "path": "Transmission", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "1F12"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_TQ_CONV_T", "path": "Transmission", "fmt": { "len": 8, "max": 470, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Torque converter temperature"}
   ]},
 { "hdr": "7E4", "dbg": true, "cmd": {"22": "4911"}, "freq": 1,
   "signals": [
@@ -259,6 +299,22 @@
           "10": { "description": "Waiting",      "value": "WAITING" }
         }}
     }
+  ]},
+{ "hdr": "7E6", "dbg": true, "cmd": {"22": "2B06"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_FL_WHL_SPD", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+  ]},
+{ "hdr": "7E6", "dbg": true, "cmd": {"22": "2B07"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_FR_WHL_SPD", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+  ]},
+{ "hdr": "7E6", "dbg": true, "cmd": {"22": "2B08"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_RL_WHL_SPD", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+  ]},
+{ "hdr": "7E6", "dbg": true, "cmd": {"22": "2B09"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_RR_WHL_SPD", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]}
 ]
 }
