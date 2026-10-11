@@ -70,9 +70,9 @@
   "signals": [
     {"id": "TATA_AAT", "path": "Climate", "fmt": { "len": 8, "max": 87.5, "min": -40, "div": 2, "add": -40, "unit": "celsius" }, "name": "Outside temperature"}
   ]},
-{ "hdr": "733", "dbg": true, "cmd": {"22": "DD04"}, "freq": 30,
+{ "hdr": "733", "rax": "73B", "dbg": true, "cmd": {"22": "DD04"}, "freq": 30,
   "signals": [
-    {"id": "TATA_CABIN_T_V2", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Cabin temperature"}
+    {"id": "TATA_CABIN_T_733", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
 { "hdr": "751", "rax": "759", "dbg": true, "cmd": {"22": "2076"}, "freq": 5,
   "signals": [
@@ -299,9 +299,10 @@
   "signals": [
     {"id": "TATA_HANDBRAKE", "path": "Control", "fmt": { "len": 8, "max": 1, "unit": "scalar" }, "name": "Handbrake"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "033E"}, "freq": 30,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "033E"}, "freq": 1,
   "signals": [
-    {"id": "TATA_FUEL_RAIL_P_V2", "path": "Fuel", "fmt": { "len": 16, "max": 30000, "unit": "kilopascal" }, "name": "Fuel rail pressure"}
+    {"id": "TATA_BOOST_ABS_P_RAW", "path": "Engine", "fmt": { "len": 16, "max": 500,   "mul": 100, "div": 13107, "unit": "kilopascal" }, "name": "Boost absolute pressure raw value"},
+    {"id": "TATA_FUEL_RAIL_P_V2",  "path": "Fuel",   "fmt": { "len": 16, "max": 30000,                           "unit": "kilopascal" }, "name": "Fuel rail pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03E6"}, "freq": 600,
   "signals": [
@@ -311,9 +312,42 @@
   "signals": [
     {"id": "TATA_ENGINE_OIL_VOLUME_GAL", "path": "Engine", "fmt": { "len": 8, "max": 6.7363, "mul": 0.0264172, "unit": "gallons" }, "name": "Oil volume"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0520"}, "freq": 30,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "051C"}, "freq": 5,
   "signals": [
-    {"id": "TATA_CHARGE_AIR_TEMP", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charge air temp"}
+    {"id": "TATA_AIR_CHG_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Air charge temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0520"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_INTERCOOLER_OUTLET_T_B1", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intercooler outlet air temperature B1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "053B"}, "freq": 3600,
+  "signals": [
+    {"id": "TATA_MIS_CAT_DAMAGE_1",          "path": "Engine", "fmt": {            "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for catalyst damage, cylinder 1"},
+    {"id": "TATA_MIS_CAT_DAMAGE_2",          "path": "Engine", "fmt": {"bix": 8,   "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for catalyst damage, cylinder 2"},
+    {"id": "TATA_MIS_CAT_DAMAGE_3",          "path": "Engine", "fmt": {"bix": 16,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for catalyst damage, cylinder 3"},
+    {"id": "TATA_MIS_CAT_DAMAGE_4",          "path": "Engine", "fmt": {"bix": 24,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for catalyst damage, cylinder 4"},
+    {"id": "TATA_MIS_CAT_DAMAGE_5",          "path": "Engine", "fmt": {"bix": 32,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for catalyst damage, cylinder 5"},
+    {"id": "TATA_MIS_CAT_DAMAGE_6",          "path": "Engine", "fmt": {"bix": 40,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for catalyst damage, cylinder 6"},
+    {"id": "TATA_MIS_EMISSIONS_1",           "path": "Engine", "fmt": {"bix": 64,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for emissions failure, cylinder 1"},
+    {"id": "TATA_MIS_EMISSIONS_2",           "path": "Engine", "fmt": {"bix": 72,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for emissions failure, cylinder 2"},
+    {"id": "TATA_MIS_EMISSIONS_3",           "path": "Engine", "fmt": {"bix": 80,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for emissions failure, cylinder 3"},
+    {"id": "TATA_MIS_EMISSIONS_4",           "path": "Engine", "fmt": {"bix": 88,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for emissions failure, cylinder 4"},
+    {"id": "TATA_MIS_EMISSIONS_5",           "path": "Engine", "fmt": {"bix": 96,  "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for emissions failure, cylinder 5"},
+    {"id": "TATA_MIS_EMISSIONS_6",           "path": "Engine", "fmt": {"bix": 104, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Misfires for emissions failure, cylinder 6"},
+    {"id": "TATA_COMBINED_MIS_FIRING",       "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Combined misfire - firing cycle counter, catalyst"},
+    {"id": "TATA_COMBINED_MIS_FIRING_CYCLE", "path": "Engine", "fmt": {"bix": 144, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Combined misfire - firing cycle counter, emission"},
+    {"id": "TATA_COMBINED_MIS_TOT_MIS",      "path": "Engine", "fmt": {"bix": 160, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Combined misfire - total misfire counters for catalyst damage during this trip"},
+    {"id": "TATA_TOT_MIS_COUNTERS",          "path": "Engine", "fmt": {"bix": 176, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Total misfire counters for emission failure during this trip"},
+    {"id": "TATA_CAT_DAMAGE_OUTPUT_1",       "path": "Engine", "fmt": {"bix": 200, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Catalyst damage output counter, cylinder 1"},
+    {"id": "TATA_CAT_DAMAGE_OUTPUT_2",       "path": "Engine", "fmt": {"bix": 208, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Catalyst damage output counter, cylinder 2"},
+    {"id": "TATA_CAT_DAMAGE_OUTPUT_3",       "path": "Engine", "fmt": {"bix": 216, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Catalyst damage output counter, cylinder 3"},
+    {"id": "TATA_CAT_DAMAGE_OUTPUT_4",       "path": "Engine", "fmt": {"bix": 224, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Catalyst damage output counter, cylinder 4"},
+    {"id": "TATA_CAT_DAMAGE_OUTPUT_5",       "path": "Engine", "fmt": {"bix": 232, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Catalyst damage output counter, cylinder 5"},
+    {"id": "TATA_CAT_DAMAGE_OUTPUT_6",       "path": "Engine", "fmt": {"bix": 240, "len": 8,  "max": 255,   "unit": "scalar" }, "name": "Catalyst damage output counter, cylinder 6"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0543"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_IAT_B2", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature B2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1172"}, "freq": 1,
   "signals": [
@@ -533,7 +567,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F470"}, "freq": 120,
   "signals": [
-    {"id": "TATA_BOOST_A", "path": "Engine", "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Manifold pressure, fine", "description": "SAE J1979 PID 70 channel A. Over 525 samples it tracks the 1 kPa manifold pressure PID to within 1.3 kPa on average, so it is the same measurement at 1/32 kPa resolution, not a separate pre-throttle sensor. The other three channels the PID defines read a constant zero and have been removed."}
+    {"id": "TATA_BOOST_A",             "path": "Engine", "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Manifold pressure, fine", "description": "SAE J1979 PID 70 channel A. Over 525 samples it tracks the 1 kPa manifold pressure PID to within 1.3 kPa on average, so it is the same measurement at 1/32 kPa resolution, not a separate pre-throttle sensor. The other three channels the PID defines read a constant zero and have been removed."},
+    {"id": "TATA_RANGE_ROVER_BOOST_A", "path": "Engine", "fmt": {"bix": 24, "len": 16, "max": 2047.9687,  "div": 32, "unit": "kilopascal" }, "name": "Manifold pressure, fine", "description": "SAE J1979 PID 70 channel A. Over 525 samples it tracks the 1 kPa manifold pressure PID to within 1.3 kPa on average, so it is the same measurement at 1/32 kPa resolution, not a separate pre-throttle sensor. The other three channels the PID defines read a constant zero and have been removed."}
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "1E12"}, "freq": 0.25,
   "signals": [
@@ -552,13 +587,38 @@
   "signals": [
     {"id": "TATA_TQ_CONV_T", "path": "Transmission", "fmt": { "len": 8, "max": 470, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Torque converter temperature"}
   ]},
-{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E68"}, "freq": 60,
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E65"}, "freq": 3600,
   "signals": [
-    {"id": "TATA_1E68_RAW", "path": "Transmission", "fmt": { "len": 8, "max": 255, "nullmin": 0, "unit": "scalar" }, "name": "1E68 raw", "description": "Undecoded transmission DID, neighbour of the gearbox temperature.", "hidden": true}
+    {"id": "TATA_TRANS_FLUID_OVER_T", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Transmission fluid over temperature counter"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E66"}, "freq": 3600,
+  "signals": [
+    {"id": "TATA_ENG_OIL_OVER_T_CNT", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil over temperature counter"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E68"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_TRANS_OUTPUT_SHFT", "path": "Transmission", "fmt": { "len": 8, "max": 8160, "mul": 32,               "unit": "rpm"    }, "name": "Transmission output shaft speed"},
+    {"id": "TATA_1E68_RAW",          "path": "Transmission", "fmt": { "len": 8, "max": 255,             "nullmin": 0, "unit": "scalar" }, "name": "1E68 raw",                        "description": "Undecoded transmission DID, neighbour of the gearbox temperature.", "hidden": true}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E6A"}, "freq": 600,
   "signals": [
     {"id": "TATA_1E6A_RAW", "path": "Drivetrain", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "1E6A raw", "description": "Undecoded transmission DID, neighbour of the gearbox temperature.", "hidden": true}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E71"}, "freq": 3600,
+  "signals": [
+    {"id": "TATA_ENG_CLT_OVER_T_CNT", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine coolant over temperature counter"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E72"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_TURBINE_SPD", "path": "Movement", "fmt": { "len": 8, "max": 8160, "mul": 32, "unit": "rpm" }, "name": "Turbine speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E7C"}, "freq": 30,
+  "signals": [
+    {"id": "TATA_TOT_DIST", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Total distance"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "201C"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_TRANSFER_CASE_HIGH_1_0", "path": "Trips", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Transfer case high, 1/low, 0 range"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "DD01"}, "freq": 600,
   "signals": [
