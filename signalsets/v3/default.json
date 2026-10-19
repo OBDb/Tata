@@ -70,25 +70,37 @@
   "signals": [
     {"id": "TATA_AAT", "path": "Climate", "fmt": { "len": 8, "max": 87.5, "min": -40, "div": 2, "add": -40, "unit": "celsius" }, "name": "Outside temperature"}
   ]},
+{ "hdr": "733", "dbg": true, "cmd": {"22": "995A"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_EVAPORATOR_T", "path": "Engine", "fmt": { "len": 8, "max": 87.5, "min": -40, "div": 2, "add": -40, "unit": "celsius" }, "name": "Evaporator temperature"}
+  ]},
+{ "hdr": "733", "dbg": true, "cmd": {"22": "9990"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_AC_P", "path": "Engine", "fmt": { "len": 8, "max": 3187, "mul": 25, "div": 2, "unit": "kilopascal" }, "name": "Air conditioning pressure"}
+  ]},
 { "hdr": "733", "rax": "73B", "dbg": true, "cmd": {"22": "DD04"}, "freq": 30,
   "signals": [
     {"id": "TATA_CABIN_T_733", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
+{ "hdr": "751", "dbg": true, "cmd": {"22": "207A"}, "freq": 15,
+  "signals": [
+    {"id": "TATA_SPARE_TIRE_P", "path": "Tires", "fmt": { "len": 16, "max": 89949, "mul": 1372549, "div": 1000000, "unit": "kilopascal" }, "name": "Spare tire pressure"}
+  ]},
 { "hdr": "751", "rax": "759", "dbg": true, "cmd": {"22": "2076"}, "freq": 5,
   "signals": [
-    {"id": "TATA_TP_FL", "path": "Tires", "fmt": {"bix": 8, "len": 8, "max": 3.5, "mul": 0.01373, "unit": "bars" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
+    {"id": "TATA_TP_FL", "path": "Tires", "fmt": { "len": 16, "max": 899.79, "mul": 0.01373, "unit": "bars" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
   ]},
 { "hdr": "751", "rax": "759", "dbg": true, "cmd": {"22": "2077"}, "freq": 5,
   "signals": [
-    {"id": "TATA_TP_FR", "path": "Tires", "fmt": {"bix": 8, "len": 8, "max": 3.5, "mul": 0.01373, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
+    {"id": "TATA_TP_FR", "path": "Tires", "fmt": { "len": 16, "max": 899.79, "mul": 0.01373, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
   ]},
 { "hdr": "751", "rax": "759", "dbg": true, "cmd": {"22": "2078"}, "freq": 5,
   "signals": [
-    {"id": "TATA_TP_RR", "path": "Tires", "fmt": {"bix": 8, "len": 8, "max": 3.5, "mul": 0.01373, "unit": "bars" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
+    {"id": "TATA_TP_RR", "path": "Tires", "fmt": { "len": 16, "max": 899.79, "mul": 0.01373, "unit": "bars" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
   ]},
 { "hdr": "751", "rax": "759", "dbg": true, "cmd": {"22": "2079"}, "freq": 5,
   "signals": [
-    {"id": "TATA_TP_RL", "path": "Tires", "fmt": {"bix": 8, "len": 8, "max": 3.5, "mul": 0.01373, "unit": "bars" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"}
+    {"id": "TATA_TP_RL", "path": "Tires", "fmt": { "len": 16, "max": 899.79, "mul": 0.01373, "unit": "bars" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"}
   ]},
 { "hdr": "751", "rax": "759", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 1,
   "signals": [
@@ -127,6 +139,26 @@
 { "hdr": "754", "fcm1": true, "dbg": true, "cmd": {"22": "A0A6"}, "freq": 60,
   "signals": [
     {"id": "TATA_GPS_SATS", "path": "GPS", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "scalar" }, "name": "Satellites in view"}
+  ]},
+{ "hdr": "760", "dbg": true, "cmd": {"22": "3800"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_FRONT_AXLE_RIDE", "path": "Engine", "fmt": { "len": 16, "max": 65335, "min": -200, "add": -200, "unit": "millimeters" }, "name": "Front axle ride height calibration offset"}
+  ]},
+{ "hdr": "760", "dbg": true, "cmd": {"22": "3B35"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CALIBRATION_OFFSET_FL", "path": "Engine", "fmt": { "len": 16, "max": 65335, "min": -200, "add": -200, "unit": "millimeters" }, "name": "Calibration offset - front left height sensor"}
+  ]},
+{ "hdr": "760", "dbg": true, "cmd": {"22": "3B36"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CALIBRATION_OFFSET_FR", "path": "Engine", "fmt": { "len": 16, "max": 65335, "min": -200, "add": -200, "unit": "millimeters" }, "name": "Calibration offset - front right height sensor"}
+  ]},
+{ "hdr": "760", "dbg": true, "cmd": {"22": "3B37"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CALIBRATION_OFFSET_RL", "path": "Engine", "fmt": { "len": 16, "max": 65335, "min": -200, "add": -200, "unit": "millimeters" }, "name": "Calibration offset - rear left height sensor"}
+  ]},
+{ "hdr": "760", "dbg": true, "cmd": {"22": "3B38"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CALIBRATION_OFFSET_RR", "path": "Engine", "fmt": { "len": 16, "max": 65335, "min": -200, "add": -200, "unit": "millimeters" }, "name": "Calibration offset - rear right height sensor"}
   ]},
 { "hdr": "761", "rax": "769", "dbg": true, "cmd": {"22": "197C"}, "freq": 120,
   "signals": [
@@ -289,20 +321,41 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "061F"}, "freq": 1,
   "signals": [
-    {"id": "TATA_DPF_SOOT_MASS", "path": "Engine", "fmt": { "len": 16, "max": 100, "mul": 20, "div": 13107, "unit": "unknown" }, "name": "Diesel particulate filter soot mass"}
+    {"id": "TATA_DPF_SOOT_MASS", "path": "Engine", "fmt": { "len": 16, "max": 100,   "mul": 20,    "div": 13107,    "unit": "unknown" }, "name": "Diesel particulate filter soot mass"},
+    {"id": "TATA_DPF_SOOT",      "path": "Engine", "fmt": { "len": 16, "max": 99.99, "mul": 15259, "div": 10000000, "unit": "unknown" }, "name": "Diesel particulate filter soot"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "0635"}, "freq": 1,
   "signals": [
-    {"id": "TATA_DPF_SOOT", "path": "Engine", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "unknown" }, "name": "Diesel particulate filter soot"}
+    {"id": "TATA_DPF_SOOT_V2", "path": "Engine", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "unknown" }, "name": "Diesel particulate filter soot"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "40F7"}, "freq": 1,
   "signals": [
     {"id": "TATA_HANDBRAKE", "path": "Control", "fmt": { "len": 8, "max": 1, "unit": "scalar" }, "name": "Handbrake"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0317"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_EXH_CAM_POS_ACTUATOR_B_1", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 0.00305, "mul": 19997, "div": 6553500, "unit": "offon" }, "name": "Exhaust camshaft position actuator, B - duty cycle bank 1"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "033E"}, "freq": 1,
   "signals": [
     {"id": "TATA_BOOST_ABS_P_RAW", "path": "Engine", "fmt": { "len": 16, "max": 500,   "mul": 100, "div": 13107, "unit": "kilopascal" }, "name": "Boost absolute pressure raw value"},
     {"id": "TATA_FUEL_RAIL_P_V2",  "path": "Fuel",   "fmt": { "len": 16, "max": 30000,                           "unit": "kilopascal" }, "name": "Fuel rail pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0396"}, "freq": 3600,
+  "signals": [
+    {"id": "TATA_DIST_NEXT", "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance to next maintenance"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03DB"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_DIFF_P_SENS_V", "path": "Battery", "fmt": { "len": 16, "max": 319, "mul": 12207, "div": 2500000, "unit": "volts" }, "name": "Diesel particulate filter differential pressure sensor voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03DD"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_BOOST_P_ACTUATOR", "path": "Engine", "fmt": { "len": 16, "max": 200, "mul": 40, "div": 13107, "unit": "percent" }, "name": "Boost pressure actuator - controlled output"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03DF"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_BOOST_P_ACTUATOR_REQUIRED", "path": "Engine", "fmt": { "len": 16, "max": 100, "mul": 20, "div": 13107, "unit": "percent" }, "name": "Boost pressure actuator - required"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03E6"}, "freq": 600,
   "signals": [
@@ -312,13 +365,61 @@
   "signals": [
     {"id": "TATA_ENGINE_OIL_VOLUME_GAL", "path": "Engine", "fmt": { "len": 8, "max": 6.7363, "mul": 0.0264172, "unit": "gallons" }, "name": "Oil volume"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03F4"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_EXH_GAS_T_SENS_1", "path": "Engine", "fmt": { "len": 8, "max": 1275, "mul": 5, "unit": "celsius" }, "name": "Exhaust gas temperature sensor 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03F5"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_EXH_GAS_T_SENS_2", "path": "Engine", "fmt": { "len": 8, "max": 1275, "mul": 5, "unit": "celsius" }, "name": "Exhaust gas temperature sensor 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03F6"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_EXH_GAS_T_SENS_3", "path": "Engine", "fmt": { "len": 8, "max": 1275, "mul": 5, "unit": "celsius" }, "name": "Exhaust gas temperature sensor 3"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03FB"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_EGR_VLV_CMD", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Exhaust gas recirculation valve, commanded"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0405"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_DIFF_P", "path": "Engine", "fmt": { "len": 8, "max": 127, "min": -128, "sign": true, "unit": "kilopascal" }, "name": "Diesel particulate filter differential pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0415"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_EOP", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Engine oil pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0429"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_FUEL_T_SENS", "path": "Fuel", "fmt": { "len": 16, "max": 511, "min": -511, "mul": 39, "div": 2500, "sign": true, "unit": "celsius" }, "name": "Fuel temperature sensor A"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "042C"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_SOOT_G_M3", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "scalar" }, "name": "Diesel particulate filter soot concentration, g/m3"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0430"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_EXH_GAS_VOLUMETRIC", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "unknown" }, "name": "Exhaust gas volumetric flow rate"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0434"}, "freq": 30,
+  "signals": [
+    {"id": "TATA_DIST_SINCE_DPF_REGEN", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar" }, "name": "Distance since last DPF regen"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "051C"}, "freq": 5,
   "signals": [
     {"id": "TATA_AIR_CHG_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Air charge temperature"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "051D"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CYL_HEAD_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Cylinder head temperature"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0520"}, "freq": 5,
   "signals": [
     {"id": "TATA_INTERCOOLER_OUTLET_T_B1", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intercooler outlet air temperature B1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0522"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_FUEL_T", "path": "Fuel", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Fuel temperature a"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "053B"}, "freq": 3600,
   "signals": [
@@ -349,9 +450,64 @@
   "signals": [
     {"id": "TATA_IAT_B2", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature B2"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "057B"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_TOO_HIGH_OIL_T", "path": "Battery", "fmt": {"bix": 13, "len": 1, "max": 1, "unit": "offon" }, "name": "Too high oil temperature in turbocharger bearings"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0599"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_TURBOCHARGER_T_TOO", "path": "Battery", "fmt": {"bix": 21, "len": 1, "max": 1, "unit": "offon" }, "name": "Turbocharger temperature too high"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05A4"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_OIL_PMP_SOLENOID_POS", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Oil pump solenoid position"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05C8"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_EGR_LOW_P", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 0.01, "div": 100, "unit": "offon" }, "name": "Exhaust gas recirculation low pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05CA"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_TURBO_EXH_GAS_INT_T", "path": "Engine", "fmt": { "len": 8, "max": 1275, "mul": 5, "unit": "celsius" }, "name": "Turbo exhaust gas intake temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05D6"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_AUXILIARY_CLT_PMP", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Auxiliary coolant pump, desired value"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05D9"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_PISTON_COOLING_INJ", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 0.00305, "mul": 40, "div": 13107, "unit": "offon" }, "name": "Piston cooling injector valve"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05DA"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CLT_PMP_VARIABLE", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 0.392, "mul": 20, "div": 51, "unit": "offon" }, "name": "Coolant pump variable flow drive position - measured"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05DB"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CLT_PMP_VARIABLE_V", "path": "Battery", "fmt": {"bix": 7, "len": 1, "max": 0.000976, "mul": 64, "div": 65535, "unit": "offon" }, "name": "Coolant pump variable flow drive position sensor voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05DD"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_CYL_T", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": -39, "min": -40, "add": -40, "unit": "offon" }, "name": "Cylinder temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "05F6"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_VARIABLE_VLV_CTRL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Variable valve control system oil temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "061B"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_QTY_CORR_CYL_1", "path": "Engine", "fmt": {           "len": 16, "max": 327, "min": -327, "div": 100, "sign": true, "unit": "unknown" }, "name": "Quantity correction for, cylinder 1"},
+    {"id": "TATA_QTY_CORR_CYL_2", "path": "Engine", "fmt": {"bix": 16, "len": 16, "max": 327, "min": -327, "div": 100, "sign": true, "unit": "unknown" }, "name": "Quantity correction for, cylinder 2"},
+    {"id": "TATA_QTY_CORR_CYL_3", "path": "Engine", "fmt": {"bix": 32, "len": 16, "max": 327, "min": -327, "div": 100, "sign": true, "unit": "unknown" }, "name": "Quantity correction for, cylinder 3"},
+    {"id": "TATA_QTY_CORR_CYL_4", "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 327, "min": -327, "div": 100, "sign": true, "unit": "unknown" }, "name": "Quantity correction for, cylinder 4"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1172"}, "freq": 1,
   "signals": [
     {"id": "TATA_BAT_V", "path": "Battery", "fmt": { "len": 8, "max": 15.9375, "mul": 625, "div": 10000, "unit": "volts" }, "name": "Battery voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1310"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_EOT_ESTIMATED", "path": "Engine", "fmt": { "len": 16, "max": 615, "min": -40, "div": 100, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature estimated"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1670"}, "freq": 1,
   "signals": [
@@ -365,9 +521,25 @@
   "signals": [
     {"id": "TATA_FLI", "path": "Fuel", "fmt": { "len": 16, "max": 100, "mul": 200, "div": 65535, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1E00"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_CALC_ENG_TQ", "path": "Engine", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Calculated engine torque"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "6310"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_GEAR_DISPLAY_RAW_CNT", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear display, raw count"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "D922"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_DPF_P_DROP_MEAS", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Diesel particulate filter pressure drop measured"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "DD01"}, "freq": 600,
   "signals": [
     {"id": "TATA_ODO_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "nullmin": 0, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "DE11"}, "freq": 30,
+  "signals": [
+    {"id": "TATA_DIST_SINCE_DPF", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "scalar" }, "name": "Distance since DPF replacement"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F401"}, "freq": 600,
   "signals": [
@@ -616,13 +788,29 @@
   "signals": [
     {"id": "TATA_TOT_DIST", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Total distance"}
   ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1E7E"}, "freq": 1,
+  "signals": [
+    {"id": "TATA_CLU_FILLING_P",   "path": "Transmission", "fmt": {           "len": 16, "max": 65535, "unit": "unknown" }, "name": "Clutch a filling pressure"},
+    {"id": "TATA_CLU_B_FILLING_P", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 65535, "unit": "unknown" }, "name": "Clutch b filling pressure"},
+    {"id": "TATA_CLU_C_FILLING_P", "path": "Transmission", "fmt": {"bix": 32, "len": 16, "max": 65535, "unit": "unknown" }, "name": "Clutch c filling pressure"},
+    {"id": "TATA_CLU_D_FILLING_P", "path": "Transmission", "fmt": {"bix": 48, "len": 16, "max": 65535, "unit": "unknown" }, "name": "Clutch d filling pressure"},
+    {"id": "TATA_CLU_E_FILLING_P", "path": "Transmission", "fmt": {"bix": 64, "len": 16, "max": 65535, "unit": "unknown" }, "name": "Clutch e filling pressure"}
+  ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "201C"}, "freq": 1,
   "signals": [
     {"id": "TATA_TRANSFER_CASE_HIGH_1_0", "path": "Trips", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Transfer case high, 1/low, 0 range"}
   ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "D9E0"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_ENG_TQ", "path": "Engine", "fmt": { "len": 8, "max": 920, "min": -100, "mul": 4, "add": -100, "unit": "newtonMeters" }, "name": "Engine torque"}
+  ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "DD01"}, "freq": 600,
   "signals": [
     {"id": "TATA_DD01_RAW", "path": "Drivetrain", "fmt": { "len": 24, "max": 16777215, "unit": "scalar" }, "name": "DD01 raw", "hidden": true}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "DD04"}, "freq": 5,
+  "signals": [
+    {"id": "TATA_CAR_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "In-car temperature"}
   ]},
 { "hdr": "7E4", "dbg": true, "cmd": {"22": "4911"}, "freq": 1,
   "signals": [
@@ -766,6 +954,13 @@
 { "hdr": "7E6", "dbg": true, "cmd": {"22": "2B09"}, "freq": 0.25,
   "signals": [
     {"id": "TATA_RR_WHL_SPD", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]},
+{ "hdr": "7E6", "rax": "7EE", "dbg": true, "cmd": {"22": "2808"}, "freq": 0.25,
+  "signals": [
+    {"id": "TATA_FL_WHL_SPD_7E6", "path": "Tires", "fmt": {           "len": 16, "max": 4276, "mul": 16313, "div": 250000, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "TATA_FR_WHL_SPD_7E6", "path": "Tires", "fmt": {"bix": 16, "len": 16, "max": 4276, "mul": 16313, "div": 250000, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "TATA_RL_WHL_SPD_7E6", "path": "Tires", "fmt": {"bix": 32, "len": 16, "max": 4276, "mul": 16313, "div": 250000, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "TATA_RR_WHL_SPD_7E6", "path": "Tires", "fmt": {"bix": 48, "len": 16, "max": 4276, "mul": 16313, "div": 250000, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]}
 ]
 }
